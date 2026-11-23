@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Spot Goes to Hollywood",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "spot-goes-to-hollywood-recomp",
+  "original": {
+    "region": "USA",
+    "serial": "SLUS-00014"
+  }
+}

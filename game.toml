@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Spot Goes to Hollywood"
+id = "SLUS-00014"
+players = 1
+exe = "disc/SLUS_000.14"
+disc = "disc/Spot Goes to Hollywood (USA).cue"
+discs = ["disc/Spot Goes to Hollywood (USA).cue"]
+disc_serials = ["SLUS-00014"]
+load_address = "0x80010000"
+entry_pc = "0x80034CE8"
+text_size = "0x00052800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Spot Goes to Hollywood (USA) (Track 1).bin"
+cue_name = "Spot Goes to Hollywood (USA).cue"
+boot_exe = "SLUS_000.14"
+known_sizes = [298254768]
+known_md5 = [
+  "276bd57a15f6a618869d76783e05931c",
+]
+known_sha1 = [
+  "7cd76889557b6dc8085e7cc0dd2e567d9655b431",
+]
+known_crc32 = [
+  "f5be73f3",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Spot Goes to Hollywood Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 23
+required_disc_fp = "d47228ef2c24aa2223df07cb132b786b7e85c93cb6fc5585cc344e34caa06ad5"
